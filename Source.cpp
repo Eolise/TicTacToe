@@ -59,6 +59,9 @@ void playTicTacToe() {
             //on demande à l'utilisateur dans quelle case veut-il poser son pion
             cout << "Entrez la ligne et la colonne (de 1 a 3) : ";
             cin >> raw >> column;
+            //sans les deux lignes suivantes, si l'utilisateur rentre autre chose qu'un entier, le programme tourne a l'infini
+            cin.clear(); // permet d'effacer le flux
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // supprime toutes les entrees en attente dans le flux
 
             raw--;
             column--; //on enleve 1 a ce qu'a entre l'utilisateur pour la ligne et la colonne, car la grille va de 0 a 2 et non pas de 1 a 3
